@@ -409,11 +409,11 @@
 #include <termios.h>
 #include <limits.h>
 #include <errno.h>
+#include <sys/param.h>
 #include <sys/wait.h>
 #include <sys/ioctl.h>
 #include <stdarg.h>
 
-extern int errno;
 int ymax = YMAX;
 int screenmax = SCREENMAX;
 
