@@ -233,7 +233,7 @@
  *    cases are true, the field is set to 0 and the function finished () is
  *    called.  Finished () allocates space to hold the compiled expression
  *    and copies this expression into the expression field of the union
- *    (bcopy ()). Matching is done by the routines match() and line_check().
+ *    (memcpy ()). Matching is done by the routines match() and line_check().
  *    Match () takes as argument the REGEX *program, a pointer to the
  *    startposition on the current line, and a flag indicating FORWARD or
  *    REVERSE search.  Match () checks out the whole file until a match is

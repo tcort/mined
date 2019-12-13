@@ -1310,7 +1310,7 @@ void finished(register REGEX *program, int *last_exp)
 /* Allocate space */
   program->result.expression = (int *) alloc(length);
 /* Copy expression. (expression consists of ints!) */
-  bcopy(exp_buffer, program->result.expression, length);
+  memcpy(program->result.expression, exp_buffer, length);
 }
 
 /*
