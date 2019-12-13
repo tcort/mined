@@ -1097,7 +1097,7 @@ void (*key_map[256])() = {       /* map ASCII characters to functions */
    /* 100-117 */ S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S,
    /* 120-137 */ S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S,
    /* 140-157 */ S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S,
-   /* 160-177 */ S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, DCC,
+   /* 160-177 */ S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, DPC,
    /* 200-217 */ S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S,
    /* 220-237 */ S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S,
    /* 240-257 */ S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S,
