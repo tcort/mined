@@ -264,7 +264,6 @@ int get_number(char *message, int *result );
 int input(char *inbuf, FLAG clearfl );
 int get_file(char *message, char *file );
 int _getch(void);
-void _flush(void);
 int _putch(int c );
 void get_term(void);
 

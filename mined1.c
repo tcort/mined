@@ -952,7 +952,7 @@ int flush_buffer(int fd)
   	return FINE;
   if (fd == STD_OUT) {
   	printf("%.*s", out_count, screen);
-  	_flush();
+  	(void) fflush(stdout);
   }
   else if (write(fd, screen, out_count) != out_count) {
   	bad_write(fd);
@@ -1730,11 +1730,6 @@ int _getch(void)
   if (read(input_fd, &c, 1) != 1 && quit == FALSE)
 	panic ("Cannot read 1 byte from input");
   return c & 0377;
-}
-
-void _flush(void)
-{
-  (void) fflush(stdout);
 }
 
 int _putch(int c)
