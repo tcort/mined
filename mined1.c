@@ -1767,7 +1767,7 @@ void get_term(void)
   ymax = tgetnum("li") - 1; /* height of the screen */
   screenmax = ymax - 1;
 
-  if (!CE || !SO || !SE || !CL || !AL || !CM) {
+  if (!AL || !CE || !VS || !CL || !SO || !SE || !CM) {
   	printf("Sorry, no mined on this type of terminal\n");
   	exit(1);
   }
