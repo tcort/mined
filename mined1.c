@@ -1757,14 +1757,14 @@ void get_term(void)
   	exit(1);
   }
 
-  AL = tgetstr("al", &loc);
-  CE = tgetstr("ce", &loc);
-  VS = tgetstr("vs", &loc);
-  CL = tgetstr("cl", &loc);
-  SO = tgetstr("so", &loc);
-  SE = tgetstr("se", &loc);
-  CM = tgetstr("cm", &loc);
-  ymax = tgetnum("li") - 1;
+  AL = tgetstr("al", &loc); /* insert line above */
+  CE = tgetstr("ce", &loc); /* clear to end of line */
+  VS = tgetstr("vs", &loc); /* enhance cursor */
+  CL = tgetstr("cl", &loc); /* clear screen */
+  SO = tgetstr("so", &loc); /* enter standout mode */
+  SE = tgetstr("se", &loc); /* leave standout mode */
+  CM = tgetstr("cm", &loc); /* move cursor to line l, col c */
+  ymax = tgetnum("li") - 1; /* height of the screen */
   screenmax = ymax - 1;
 
   if (!CE || !SO || !SE || !CL || !AL || !CM) {
