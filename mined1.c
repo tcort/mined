@@ -1411,6 +1411,7 @@ void (*escfunc(int c))(void)
 	c = getch();
 	switch (c) {
 	case 'H': return(HO);
+	case 'F': return(EF);
 	case 'A': return(UP1);
 	case 'B': return(DN1);
 	case 'C': return(RT1);
@@ -1422,6 +1423,18 @@ void (*escfunc(int c))(void)
 	case 'U': return(PD);
 	case 'V': return(PU);
 	case 'Y': return(EF);
+	case '1':
+		c = getch();
+		if (c == '~') {
+			return(HO);
+		}
+		break;
+	case '4':
+		c = getch();
+		if (c == '~') {
+			return(EF);
+		}
+		break;
 	case '5':
 		c = getch();
 		if (c == '~') {
@@ -1432,6 +1445,18 @@ void (*escfunc(int c))(void)
 		c = getch();
 		if (c == '~') {
 			return(PD);
+		}
+		break;
+	case '7':
+		c = getch();
+		if (c == '~') {
+			return(HO);
+		}
+		break;
+	case '8':
+		c = getch();
+		if (c == '~') {
+			return(EF);
 		}
 		break;
 	}
