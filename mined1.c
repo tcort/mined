@@ -1429,6 +1429,12 @@ void (*escfunc(int c))(void)
 			return(HO);
 		}
 		break;
+	case '3':
+		c = getch();
+		if (c == '~') {
+			return(DCC);
+		}
+		break;
 	case '4':
 		c = getch();
 		if (c == '~') {
