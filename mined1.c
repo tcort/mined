@@ -1422,6 +1422,18 @@ void (*escfunc(int c))(void)
 	case 'U': return(PD);
 	case 'V': return(PU);
 	case 'Y': return(EF);
+	case '5':
+		c = getch();
+		if (c == '~') {
+			return(PU);
+		}
+		break;
+	case '6':
+		c = getch();
+		if (c == '~') {
+			return(PD);
+		}
+		break;
 	}
 	return(I);
   }
