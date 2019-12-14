@@ -388,9 +388,9 @@
  *    CTRL-E   Erase and redraw the screen
  *    CTRL-V   Visit file (read a new file); complain if old one changed
  *    CTRL-W   Write the current file back to the disk
- *    numeric +  Search forward (prompt for regular expression)
- *    numeric -  Search backward (prompt for regular expression)
- *    numeric 5  Print the current status of the file
+ *    CTRL-H or numeric +  Search forward (prompt for regular expression)
+ *    CTRL-J or numeric -  Search backward (prompt for regular expression)
+ *    CTRL-I or numeric 5  Print the current status of the file
  *    CTRL-R   (Global) Replace str1 by str2 (prompts for each string)
  *    CTRL-L   (Line) Replace string1 by string2
  *    CTRL-S   Fork off a shell and wait for it to finish
@@ -1089,7 +1089,7 @@ void free_space(char *p)
 /* The mapping between input codes and functions. */
 
 void (*key_map[256])() = {       /* map ASCII characters to functions */
-   /* 000-017 */ MA, BL, MP, YA, SD, RD, MN, IF, DPC, S, S, DT, LR, S, DNW,LIB,
+   /* 000-017 */ MA, BL, MP, YA, SD, RD, MN, IF, SF, FS, SR, DT, LR, S, DNW,LIB,
    /* 020-037 */ DPW, WB, GR, SH, DLN, SU, VI, XWT, XT, PT, EL, ESC, I, GOTO,
 		 HIGH, LOW,
    /* 040-057 */ S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S,
