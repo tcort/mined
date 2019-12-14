@@ -982,6 +982,7 @@ void bad_write(int fd)
  */
 void catch(int sig)
 {
+  (void) sig;
 /* Reset the signal */
   signal(SIGQUIT, catch);
   quit = TRUE;
