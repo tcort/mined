@@ -15,3 +15,5 @@ target_compile_options(mined PRIVATE -Wall -Wextra -pedantic -ansi)
 
 install(TARGETS mined RUNTIME DESTINATION bin)
 install(FILES ${PROJECT_SOURCE_DIR}/mined.1 DESTINATION man/man1)
+
+include(CPack)
