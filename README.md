@@ -2,6 +2,8 @@
 
 This is a portable version of the `mined` text editor from [Minix](http://minix3.org/).
 
+The goal of this project is to keep `mined` alive and available on a variety of platforms.
+
 ## Quick Reference
 
 ### Cursor Motion
@@ -79,4 +81,8 @@ This is a portable version of the `mined` text editor from [Minix](http://minix3
 | `[^string]`| matches any of the characters except those in the string    |
 | `[x-y]`    | matches any characters between x and y (e.g., `[a-z]`).     |
 | `Pattern*` | matches any number of occurrences of pattern                |
+
+## Disclaimer
+
+This project to make a portable version of `mined` is not sponsored, endorsed, nor affiliated with the Minix project, Stichting MINIX Research Foundation, Vrije Universiteit, the original author(s), nor the original designer of `mined`. It's simply the personal project of one guy on the Internet trying to keep `mined` alive and available on a variety of platforms.
 
