@@ -36,8 +36,8 @@ This is a portable version of the `mined` text editor from [Minix](http://minix3
 | `Ctrl-n`    | Delete the next word                                            |
 | `Ctrl-p`    | Delete the previous word                                        |
 | `Ctrl-t`    | Delete tail of line (all characters from cursor to end of line) |
-| `Ctrl-o     | Open up the line (insert line feed and back up)                 |
-| `Ctrl-g     | Get and insert a file at the cursor position                    |
+| `Ctrl-o`    | Open up the line (insert line feed and back up)                 |
+| `Ctrl-g`    | Get and insert a file at the cursor position                    |
 
 ### Buffer Operations
 
@@ -65,4 +65,18 @@ This is a portable version of the `mined` text editor from [Minix](http://minix3
 | `Ctrl-\`                | Abort whatever the editor was doing and wait for command  |
 | `Ctrl-e`                | Erase screen and redraw it                                |
 | `Ctrl-v`                | Visit (edit) a new file                                   |
+
+### Regular Expressions
+
+| Pattern    | Description                                                 |
+| ---------- | ----------------------------------------------------------- |
+| `c`        | Any displayable character matches itself                    |
+| `.`        | (period) matches any character except line feed             |
+| `^`        | (circumflex) matches the start of the line                  |
+| `$`        | (dollar sign) matches the end of the line                   |
+| `\c`       | matches the character c (including period, circumflex, etc) |
+| `[string]` | matches any of the characters in the string                 |
+| `[^string]`| matches any of the characters except those in the string    |
+| `[x-y]`    | matches any characters between x and y (e.g., `[a-z]`).     |
+| `Pattern*` | matches any number of occurrences of pattern                |
 

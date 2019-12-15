@@ -1,4 +1,4 @@
-.Dd March 25, 2015
+.Dd December 14, 2019
 .Dt MINED 1
 .Os
 .Sh NAME
@@ -6,7 +6,9 @@
 .Nd text editor
 .Sh SYNOPSIS
 .Nm
-.Op file
+.Op -h
+.Op -v
+.Op FILENAME
 .Sh DESCRIPTION
 .Nm
 is a simple screen editor.
@@ -213,6 +215,13 @@ Abort whatever the editor was doing and wait for command
 Erase screen and redraw it
 .It Em CTRL-V
 Visit (edit) a new file
+.El
+.Sh OPTIONS
+.Bl -tag -width "0123456789" -compact
+.It Em -h
+Print a helpful message and exit
+.It Em -v
+Print version information and exit
 .El
 .Sh SEE ALSO
 .Xr vi 1 ,

@@ -6,6 +6,7 @@
  *				Move Commands				      *
  *  ========================================================================  */
 
+#include "config.h"
 #include "mined.h"
 #include <string.h>
 

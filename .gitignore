@@ -1,4 +1,5 @@
 mined
+config.h
 *.o
 CMakeCache.txt
 CMakeFiles/

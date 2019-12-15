@@ -404,7 +404,9 @@
  *				Utilities				      *
  *  ========================================================================  */
 
+#include "config.h"
 #include "mined.h"
+#include <getopt.h>
 #include <signal.h>
 #include <termios.h>
 #include <limits.h>
@@ -1307,9 +1309,20 @@ LINE *install_line(char *buffer, int length)
 int main(int argc, char *argv[])
 {
 /* mined is the Minix editor. */
-
+  char ch;
   register int index;		/* Index in key table */
   struct winsize winsize;
+
+  while ((ch = getopt(argc, argv, "hv")) != -1) {
+	switch (ch) {
+		case 'h':
+			printf("usage %s [-v] [-h] [FILENAME]\n", argv[0]);
+			return 0;
+		case 'v':
+			printf("%s %s\n", PROJECT_NAME, PROJECT_VERSION);
+			return 0;
+	}
+  }
 
   get_term();
   tputs(VS, 0, _putch);
