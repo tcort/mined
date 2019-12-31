@@ -1033,8 +1033,11 @@ void raw_mode(FLAG state)
 
 /* Set tty to CBREAK mode */
   tcgetattr(input_fd, &new_tty);
-  new_tty.c_lflag &= ~(ICANON|ECHO|ECHONL);
-  new_tty.c_iflag &= ~(IXON|IXOFF);
+  new_tty.c_lflag &= ~(ICANON|ECHO|ECHONL |IEXTEN|ISIG);
+  new_tty.c_iflag &= ~(IXON|IXOFF |BRKINT|INPCK|ISTRIP);
+  new_tty.c_oflag &= ~(OPOST);
+  new_tty.c_cflag |= (CS8);
+  new_tty.c_cc[VMIN] = 1;
 
 /* Unset signal chars, leave only SIGQUIT set to ^\ */
   new_tty.c_cc[VINTR] = new_tty.c_cc[VSUSP] = UNDEF;
@@ -1092,7 +1095,7 @@ void free_space(char *p)
 /* The mapping between input codes and functions. */
 
 void (*key_map[256])() = {       /* map ASCII characters to functions */
-   /* 000-017 */ MA, BL, MP, YA, SD, RD, MN, IF, SF, FS, SR, DT, LR, S, DNW,LIB,
+   /* 000-017 */ MA, BL, MP, YA, SD, RD, MN, IF, SF, FS, S, DT, LR, S, DNW,LIB,
    /* 020-037 */ DPW, WB, GR, SH, DLN, SU, VI, XWT, XT, PT, EL, ESC, I, GOTO,
 		 HIGH, LOW,
    /* 040-057 */ S, S, S, S, S, S, S, S, S, S, S, S, S, S, S, S,
@@ -1767,7 +1770,7 @@ int input(char *inbuf, FLAG clearfl)
 int get_file(char *message, char *file)
 {
   char *ptr;
-  int ret;
+  int ret = ERRORS;
 
   if (message == NULL || (ret = get_string(message, file, TRUE)) == FINE) {
   	if (length_of((ptr = basename(file))) > NAME_MAX)
