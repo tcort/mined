@@ -4,6 +4,21 @@ This is a portable version of the `mined` text editor from [Minix](http://minix3
 
 The goal of this project is to keep `mined` alive and available on a variety of platforms.
 
+## Requirements
+
+* C compiler and standard build tools (make, sh, ...).
+* [cmake](https://cmake.org/)
+* curses library (e.g. [ncurses](https://invisible-island.net/ncurses/))
+
+## Installation
+
+```
+cd bin
+cmake ..
+make
+make install
+```
+
 ## Quick Reference
 
 ### Cursor Motion
